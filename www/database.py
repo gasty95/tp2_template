@@ -3,6 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from models import Samples
 from sqlalchemy import func
+from sqlalchemy import and_
 import os
 
 class Database(object):
@@ -46,7 +47,7 @@ class Database(object):
                     'temperature': samples.temperature,
                     'humidity': samples.humidity,
                     'pressure': samples.pressure,
-                    'windspeed': samples.windspeed,
+                    'windspeed': samples.windspeed
                 }        
         return sample
 
@@ -59,7 +60,9 @@ class Database(object):
         total.pressure=0
         total.windspeed=0
         total.id=cant-10
-        s = session.query(Samples).filter_by(and_(Samples.id > total.id , (Samples.id <= cant))) # selecciona las ultimas 10 muestras
+
+        s=session.query(Samples).\
+        filter(Samples.id > total.id, Samples.id <= cant)
         session.close()
         aux=0
         while(aux<10):

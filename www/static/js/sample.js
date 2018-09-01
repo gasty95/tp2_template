@@ -13,7 +13,7 @@ function start_get_temperature() {
             $("#windspeed-" + id_sample).html(data.windspeed);
             $("#pressure-" + id_sample).html(data.pressure);      
             $("#humidity-" + id_sample).html(data.humidity);
-        });},2000);
+        });},inlineFormCustomSelect);
 }
 
 function temperature() {

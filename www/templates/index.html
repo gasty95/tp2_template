@@ -19,15 +19,25 @@
         <h1> Pronostico de tiempo </h1>
     </div>
 
-    <div class="container">
-        <div class="form-group row">
-            <label for="frec_muestreo" class="col-2 col-form-label">Frecuencia de muestreo</label>
-                <div class="col-10">
-                    <input class="form-control" type="number" value="1" id="frec_muestreo">
-                </div>
+  
+                <div class="center-block">
+                    
+                <form class="form-inline">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Frecuencia de muestreo</label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                  <option selected>Seleccione</option>
+                  <option value="1">1 segundos</option>
+                  <option value="2">2 segundos</option>
+                  <option value="5">5 segundos</option>
+                  <option value="10">10 segundos</option>
+                  <option value="30">30 segundos</option>
+                  <option value="60">60 segundos</option>
+                </select>
+                </form>
+                
             </div>
-        </div>
-    </div>
+            
+  
 
 <div class="row">
     <div class="col-md">
@@ -64,6 +74,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script type="text/javascript">
         var id_sample = "{{id_sample}}";
+        var inlineFormCustomSelect = inlineFormCustomSelect;
     </script>
 </body>
 

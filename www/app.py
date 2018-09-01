@@ -33,6 +33,7 @@ def get_sample(id_sample):
     return jsonify(sample)  
 
 
+
 @app.route('/promedios', methods = ["POST"])
 def average():
     avg = db.get_average()
