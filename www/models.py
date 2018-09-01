@@ -1,7 +1,8 @@
 import datetime
+import base64
 
-from sqlalchemy.schema import Column
-from sqlalchemy.types import Integer
+from sqlalchemy.schema import Column, ForeignKey
+from sqlalchemy.types import Integer, String, BLOB, Date
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
