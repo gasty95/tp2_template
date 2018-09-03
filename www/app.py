@@ -32,13 +32,19 @@ def get_sample(id_sample):
     sample = db.get_sample(id_sample)
     return jsonify(sample)  
 
-
+@app.route('/samples/stop/<id_sample>', methods = ["GET"])
+def stop_sample(id_sample):
+    data = pro.stop_process()
+    return render_template('index.html', id_sample=id_sample)
 
 @app.route('/promedios', methods = ["POST"])
 def average():
     avg = db.get_average()
     return render_template('promedios.html', avg=avg)  
 
+#@app.route('/frecuencia/<frec>', methods = ["GET"])
+#def get_frec(frec):
+#    return jsonify(frec) 
 
 if __name__ == "__main__":
     # Define HOST and port

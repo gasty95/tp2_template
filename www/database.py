@@ -22,7 +22,7 @@ class Database(object):
         """
         if self.session == None:
             connection = 'mysql+mysqlconnector://%s:%s@%s:%s/%s' % (self.db_user,self.db_pass,self.db_host,self.db_port,self.db_name)
-            engine = create_engine(connection,echo=True)
+            engine = create_engine(connection)
             connection = engine.connect()
             Session = sessionmaker(bind=engine)
             self.session = Session()
@@ -47,7 +47,7 @@ class Database(object):
                     'temperature': samples.temperature,
                     'humidity': samples.humidity,
                     'pressure': samples.pressure,
-                    'windspeed': samples.windspeed
+                    'windspeed': samples.windspeed,
                 }        
         return sample
 
@@ -59,8 +59,7 @@ class Database(object):
         total.humidity=0
         total.pressure=0
         total.windspeed=0
-        total.id=cant-10
-
+        total.id=cant-1
         s=session.query(Samples).\
         filter(Samples.id > total.id, Samples.id <= cant)
         session.close()

@@ -19,6 +19,7 @@ class Process(object):
         if self.process != None:
             os.killpg(os.getpgid(self.process.pid), signal.SIGTERM)
             self.process = None
+        return 200
 
     def is_running(self):
         return self.process != None
