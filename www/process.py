@@ -29,7 +29,7 @@ def main(session,t):
         session.add(sample)
         session.commit()
         #print(" Temperatura: %s | Humedad: %s | Presion: %s | Velocidad del viento: %s" % (t.temperature, t.humidity, t.pressure, t.windspeed))
-        time.sleep(10)  #Lo puse cada 10 para que no genere tantos valores y poder debugearlo mejor
+        time.sleep(2)  #Lo puse cada 10 para que no genere tantos valores y poder debugearlo mejor
         if killer.kill_now:
             session.close()
             break
