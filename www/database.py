@@ -59,9 +59,9 @@ class Database(object):
         total.humidity=0
         total.pressure=0
         total.windspeed=0
-        total.id=cant-10
+        total.id=cant-1
         s=session.query(Samples).\
-        filter(Samples.id > total.id, Samples.id <= cant)
+        filter(Samples.id > -10, Samples.id <= cant)
         session.close()
         aux=0
         while(aux<10):

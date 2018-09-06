@@ -23,9 +23,11 @@ def start():
     
     if pro.is_running():
       return index()
+    data= request.form
+    d_m= data["frec"]
     id_sample = db.init_start()
     pro.start_process()
-    return render_template('samples.html', id_sample=id_sample)
+    return render_template('samples.html', id_sample=id_sample, frec= d_m)
 
 @app.route('/samples/<id_sample>', methods = ["GET"])
 def get_sample(id_sample):
@@ -42,9 +44,6 @@ def average():
     avg = db.get_average()
     return render_template('promedios.html', avg=avg)  
 
-#@app.route('/frecuencia/<frec>', methods = ["GET"])
-#def get_frec(frec):
-#    return jsonify(frec) 
 
 if __name__ == "__main__":
     # Define HOST and port

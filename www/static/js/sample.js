@@ -14,7 +14,7 @@ $(window).on("unload", function(e) {
 });
 
 function start_get_temperature() {
-    control_temperature = setInterval(temperature,2000);
+    control_temperature = setInterval(temperature,frec);
 }
 
 function stop_get_temperature() {
