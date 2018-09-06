@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
+    <title>Medición de temperatura</title>
+</head>
+
+
+<body>
+
+    <div class="text-center">  
+        <h1> Pronostico de tiempo </h1>
+    </div>
+
+  
+        
+
+<div class="row">
+    <div class="col-xs-6 col-sm-3">
+        
+            <div class="text-left">       
+                <form method="POST" action="/samples">
+   
+                    <form class="form-group">
+                        <label class="mr-sm-2" for="{{frec}}">Frecuencia de muestreo</label>
+                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="frec" id="frec">
+                          <option value="1000" selected>1 segundos</option>
+                          <option value="2000">2 segundos</option>
+                          <option value="5000">5 segundos</option>
+                          <option value="10000">10 segundos</option>
+                          <option value="30000">30 segundos</option>
+                          <option value="60000">60 segundos</option>
+                        </select>
+                        <div class="center-block">
+                            <button type="submit" class="btn btn-primary mb-2">Cambiar Frecuencia</button>
+                        </div>
+                        <button type="submit" class="btn btn-success">Comenzar mediciones</button>
+                        
+                 </form>
+            </div>
+        
+    </div>
+
+    <div class="col-xs-6 col-sm-3">
+        
+            <div class="text-left">       
+                <form method="POST" action="/promedios">
+                        
+                        <button type="submit" class="btn btn-success">Promedios</button>
+
+                </form>
+            </div>
+                      
+   </div>
+</div>
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var id_sample = "{{id_sample}}";
+        var frec = "{{frec}}";
+      </script>
+</body>
+
+</html>
