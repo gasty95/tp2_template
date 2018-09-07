@@ -1,0 +1,26 @@
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    
+
+ <h1>Promedios de las ultimas 10 muestras:</h1>
+
+<div class="row">
+        <div class="col-md"> <!-- Se muestran los promedios obtenidos -->
+                <div class="text-center">
+                    <p>Temperatura promedio: </p>
+                      <h1>{{avg.temperature}}</h1>
+                      <p>Humedad promedio: </p>
+                      <h1> {{avg.humidity}}</h1>
+                      <p>Presion promedio: </p>
+                      <h1> {{avg.pressure}}</h1>
+                      <p>Velocidad del viento promedio: </p>
+                      <h1> {{avg.windspeed}}</h1>
+                </div>
+
+        </div>
+    </div>
+
+<script type="text/javascript">
+        var avg="{{avg}}";
+</script>

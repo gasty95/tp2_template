@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pronostico de tiempo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/samples.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="chrono-container"> <!-- Se muestra un cronometro en pantalla -->
+                <div class="chrono" id="horas">00</div>
+                <div class="chrono" id="minutos">:00</div>
+                <div class="chrono" id="segundos">:00</div>
+                <div class="chrono" id="centesimas">:00</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                    <div class="text-center"> <!-- Se muestran los valores a traves del archivo sample.js -->
+                        <p>Temperatura: </p>
+                          <h1 class="" id="temperature-{{id_sample}}">0</h1>
+                          <p>Humedad: </p>
+                          <h1 class="" id="humidity-{{id_sample}}">0</h1>
+                          <p>Presion: </p>
+                          <h1 class="" id="pressure-{{id_sample}}">0</h1>
+                          <p>Velocidad del viento: </p>
+                          <h1 class="" id="windspeed-{{id_sample}}">0</h1>
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="row stop"> <!-- Boton para finalizar el proceso de obtención de datos. -->
+            <input type="button" value= "Stop" class="btn btn-success" onclick="location='samples/stop/1'" />
+        </div>
+
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="/static/js/sample.js"></script>
+    <script src="/static/js/chronometer.js"></script>
+    <script type="text/javascript">
+        var id_sample = "{{id_sample}}";
+        var frec = "{{frec}}";
+    </script>
+</body>
+
+</html>
